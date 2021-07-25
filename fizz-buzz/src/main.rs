@@ -1,25 +1,23 @@
 fn main() {
-    println!("Hello, Fizz Buzz!");
+  println!("Hello, Fizz Buzz!");
 
-    const NUMBER: i32 = 35;
+  const NUMBER: i32 = 35;
 
-    let fizz_buzz_result = fizz_buzz(&NUMBER);
+  let fizz_buzz_result = fizz_buzz(&NUMBER);
 
-    println!("Fizz Buzz for number {} is: {:?}", NUMBER, fizz_buzz_result);
-
+  println!("Fizz Buzz for number {} is: {:?}", NUMBER, fizz_buzz_result);
 }
 
 fn fizz_buzz(number: &i32) -> Vec<String> {
-
   //NOTE: we start at 1 to avoid handling another case with 0
   let numbers = 1..=*number;
 
-  numbers.map(|n| {
-    match n {
+  numbers
+    .map(|n| match n {
       n if n % 3 == 0 => "Fizz".to_string(),
       n if n % 5 == 0 => "Buzz".to_string(),
-      n if (n % 3 == 0 && n % 5 == 0)  => "FizzBuzz".to_string(),
-      _ => n.to_string()
-    }
-  }).collect()
+      n if (n % 3 == 0 && n % 5 == 0) => "FizzBuzz".to_string(),
+      _ => n.to_string(),
+    })
+    .collect()
 }
