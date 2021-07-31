@@ -14,9 +14,9 @@ fn fizz_buzz(number: &i32) -> Vec<String> {
 
   numbers
     .map(|n| match n {
-      n if n % 3 == 0 => "Fizz".to_string(),
-      n if n % 5 == 0 => "Buzz".to_string(),
-      n if (n % 3 == 0 && n % 5 == 0) => "FizzBuzz".to_string(),
+      n if (n % 3 == 0 && n % 5 == 0) => String::from("FizzBuzz"),
+      n if n % 3 == 0 => String::from("Fizz"),
+      n if n % 5 == 0 => String::from("Buzz"),
       _ => n.to_string(),
     })
     .collect()
