@@ -3,14 +3,14 @@ fn main() {
 
   const NUMBER: i32 = 35;
 
-  let fizz_buzz_result = fizz_buzz(&NUMBER);
+  let fizz_buzz_result = fizz_buzz(NUMBER);
 
   println!("Fizz Buzz for number {} is: {:?}", NUMBER, fizz_buzz_result);
 }
 
-fn fizz_buzz(number: &i32) -> Vec<String> {
+fn fizz_buzz(number: i32) -> Vec<String> {
   //NOTE: we start at 1 to avoid handling another case with 0
-  let numbers = 1..=*number;
+  let numbers = 1..=number;
 
   numbers
     .map(|n| match n {
